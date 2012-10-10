@@ -7,7 +7,7 @@
     <author>Gnanakeethan Balasubramaniam</author>
     <authorEmail>gnanakeethan@gmail.com</authorEmail>
     <authorUrl></authorUrl>
-    <version>0.0.1.0.a.0.0.1.a</version>
+    <version>0.0.1.0.a.0.0.1.b</version>
     <description>School Management System</description>
     
     <install> <!-- Runs on install -->

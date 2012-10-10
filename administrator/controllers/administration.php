@@ -1,7 +1,7 @@
 <?php
 /**
- * @version     0.0.1.0.a.0.0.1.a
- * @package     com_school
+ * @package     School Management
+ * @subpackage  Admin  Controller
  * @copyright   Copyright (C) 2012. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  * @author      Gnanakeethan Balasubramaniam <gnanakeethan@gmail.com> - 
@@ -15,11 +15,11 @@ jimport('joomla.application.component.controllerform');
 /**
  * Configuration controller class.
  */
-class SchoolControllerConfiguration extends JControllerForm
+class SchoolControllerAdministration extends JControllerForm
 {
 
     function __construct() {
-        $this->view_list = 'configurations';
+        $this->view_list = 'administration';
         parent::__construct();
     }
 

@@ -1,7 +1,7 @@
 <?php
 /**
- * @version     0.0.1.0.a.0.0.1.a
- * @package     com_school
+ * @package     School Management
+ * @subpackage  Admin View 
  * @copyright   Copyright (C) 2012. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  * @author      Gnanakeethan Balasubramaniam <gnanakeethan@gmail.com> - 
@@ -15,7 +15,7 @@ jimport('joomla.application.component.view');
 /**
  * View to edit
  */
-class SchoolViewConfiguration extends JView
+class SchoolViewadministration extends JView
 {
 	protected $state;
 	protected $item;
@@ -45,10 +45,10 @@ class SchoolViewConfiguration extends JView
 	 */
 	protected function addToolbar()
 	{
-		JRequest::setVar('hidemainmenu', true);
+		JRequest::setVar('hidemainmenu', false);
 
 		$user		= JFactory::getUser();
-		$isNew		= ($this->item->id == 0);
+		//$isNew		= ($this->item->id == 0);
         if (isset($this->item->checked_out)) {
 		    $checkedOut	= !($this->item->checked_out == 0 || $this->item->checked_out == $user->get('id'));
         } else {
@@ -56,28 +56,9 @@ class SchoolViewConfiguration extends JView
         }
 		$canDo		= SchoolHelper::getActions();
 
-		JToolBarHelper::title(JText::_('COM_SCHOOL_TITLE_CONFIGURATION'), 'configuration.png');
+		JToolBarHelper::title(JText::_('COM_SCHOOL_TITLE_ADMINISTRATION'), 'adminsitration.png');
 
-		// If not checked out, can save the item.
-		if (!$checkedOut && ($canDo->get('core.edit')||($canDo->get('core.create'))))
-		{
-
-			JToolBarHelper::apply('configuration.apply', 'JTOOLBAR_APPLY');
-			JToolBarHelper::save('configuration.save', 'JTOOLBAR_SAVE');
-		}
-		if (!$checkedOut && ($canDo->get('core.create'))){
-			JToolBarHelper::custom('configuration.save2new', 'save-new.png', 'save-new_f2.png', 'JTOOLBAR_SAVE_AND_NEW', false);
-		}
-		// If an existing item, can save to a copy.
-		if (!$isNew && $canDo->get('core.create')) {
-			JToolBarHelper::custom('configuration.save2copy', 'save-copy.png', 'save-copy_f2.png', 'JTOOLBAR_SAVE_AS_COPY', false);
-		}
-		if (empty($this->item->id)) {
-			JToolBarHelper::cancel('configuration.cancel', 'JTOOLBAR_CANCEL');
-		}
-		else {
-			JToolBarHelper::cancel('configuration.cancel', 'JTOOLBAR_CLOSE');
-		}
+		
 
 	}
 }

@@ -1,8 +1,7 @@
 <?php
-
 /**
- * @version     0.0.1.0.a.0.0.1.a
- * @package     com_school
+ * @package     School Management
+ * @subpackage  Admin Table
  * @copyright   Copyright (C) 2012. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  * @author      Gnanakeethan Balasubramaniam <gnanakeethan@gmail.com> - 
@@ -13,7 +12,7 @@ defined('_JEXEC') or die;
 /**
  * configuration Table class
  */
-class SchoolTableconfiguration extends JTable {
+class SchoolTableadministration extends JTable {
 
     /**
      * Constructor
@@ -21,7 +20,7 @@ class SchoolTableconfiguration extends JTable {
      * @param JDatabase A database connector object
      */
     public function __construct(&$db) {
-        parent::__construct('#__school_configuration', 'id', $db);
+        parent::__construct('#__school_administration', 'id', $db);
     }
 
     /**

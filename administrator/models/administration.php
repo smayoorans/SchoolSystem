@@ -1,7 +1,7 @@
 <?php
 /**
- * @version     0.0.1.0.a.0.0.1.a
- * @package     com_school
+ * @package     School Management
+ * @subpackage  Admin Models
  * @copyright   Copyright (C) 2012. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  * @author      Gnanakeethan Balasubramaniam <gnanakeethan@gmail.com> - 
@@ -15,7 +15,7 @@ jimport('joomla.application.component.modeladmin');
 /**
  * School model.
  */
-class SchoolModelconfiguration extends JModelAdmin
+class SchoolModeladministration extends JModelAdmin
 {
 	/**
 	 * @var		string	The prefix to use with controller messages.
@@ -33,7 +33,7 @@ class SchoolModelconfiguration extends JModelAdmin
 	 * @return	JTable	A database object
 	 * @since	1.6
 	 */
-	public function getTable($type = 'Configuration', $prefix = 'SchoolTable', $config = array())
+	public function getTable($type = 'administration', $prefix = 'SchoolTable', $config = array())
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}
@@ -52,7 +52,7 @@ class SchoolModelconfiguration extends JModelAdmin
 		$app	= JFactory::getApplication();
 
 		// Get the form.
-		$form = $this->loadForm('com_school.configuration', 'configuration', array('control' => 'jform', 'load_data' => $loadData));
+		$form = $this->loadForm('com_school.administration', 'administration', array('control' => 'jform', 'load_data' => $loadData));
 		if (empty($form)) {
 			return false;
 		}
@@ -69,7 +69,7 @@ class SchoolModelconfiguration extends JModelAdmin
 	protected function loadFormData()
 	{
 		// Check the session for previously entered form data.
-		$data = JFactory::getApplication()->getUserState('com_school.edit.configuration.data', array());
+		$data = JFactory::getApplication()->getUserState('com_school.edit.administration.data', array());
 
 		if (empty($data)) {
 			$data = $this->getItem();
@@ -112,7 +112,7 @@ class SchoolModelconfiguration extends JModelAdmin
 			// Set ordering to the last item if not set
 			if (@$table->ordering === '') {
 				$db = JFactory::getDbo();
-				$db->setQuery('SELECT MAX(ordering) FROM #__school_configuration');
+				$db->setQuery('SELECT MAX(ordering) FROM #__school_administration');
 				$max = $db->loadResult();
 				$table->ordering = $max+1;
 			}
