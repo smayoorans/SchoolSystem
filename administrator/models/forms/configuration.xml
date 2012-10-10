@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_SCHOOL_FORM_LBL_CONFIGURATION_ID"
+                    readonly="true" class="readonly"
+                    description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="school_name" type="text"
+                        
+            label="COM_SCHOOL_FORM_LBL_CONFIGURATION_SCHOOL_NAME"
+            description="COM_SCHOOL_FORM_DESC_CONFIGURATION_SCHOOL_NAME" 
+                        
+                        
+                         required="true" 
+            default="School Management"
+            class="school_name_config"
+            filter="word"
+            size="60"
+            maxlength="150" /> 
+
+       <field name="school_address" type="textarea"
+                        
+            label="COM_SCHOOL_FORM_LBL_CONFIGURATION_SCHOOL_ADDRESS"
+            description="COM_SCHOOL_FORM_DESC_CONFIGURATION_SCHOOL_ADDRESS" 
+                        
+                        
+                        
+            default="School Name, Lane,Road,County,Region,Country"
+            class="school_address_config"
+            cols="60"
+            rows="5"
+            filter="raw" />
+
+	</fieldset>
+
+</form>
