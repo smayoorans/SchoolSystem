@@ -15,7 +15,7 @@ jimport('joomla.application.component.view');
 /**
  * View to edit
  */
-class SchoolViewadministration extends JView
+class SchoolViewConfiguration extends JView
 {
 	protected $state;
 	protected $item;
@@ -47,17 +47,9 @@ class SchoolViewadministration extends JView
 	{
 		JRequest::setVar('hidemainmenu', false);
 
-		$user		= JFactory::getUser();
-		//$isNew		= ($this->item->id == 0);
-        if (isset($this->item->checked_out)) {
-		    $checkedOut	= !($this->item->checked_out == 0 || $this->item->checked_out == $user->get('id'));
-        } else {
-            $checkedOut = false;
-        }
 		$canDo		= SchoolHelper::getActions();
 
-		JToolBarHelper::title(JText::_('COM_SCHOOL_TITLE_ADMINISTRATION'), 'adminsitration.png');
+		JToolBarHelper::title(JText::_('COM_SCHOOL_TITLE_CONFIURATION'), 'configuration.png');
 
-		JToolBarHelper::preferences('com_school');
 	}
 }
