@@ -36,24 +36,3 @@ class SchoolController extends JController
 		return $this;
 	}
 }
-class SchoolControllerConfiguration extends JController
-
-{
-	
-	//Controller for Configuration file of the Component
-	public function display($cachable = false, $urlparams = false)
-	{
-		require_once JPATH_COMPONENT.'/helpers/school.php';
-
-		// Load the submenu.
-		SchoolHelper::addSubmenu(JRequest::getCmd('view', 'configuration'));
-		SchoolHelper::addSubmenu(JReuest::getCmd('close','close'));
-
-		$view		= JRequest::getCmd('view', 'configuration');
-        JRequest::setVar('view', $view);
-
-		parent::display();
-
-		return $this;
-	}
-}
